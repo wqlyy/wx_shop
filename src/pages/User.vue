@@ -12,19 +12,19 @@
       </div>
     </div>
     <group gutter="0">
-      <cell title="测试" is-link>
+      <cell title="兑换记录" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-01.png" alt="">
       </cell>
-      <cell title="测试" is-link>
+      <cell title="我的奖品" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-02.png" alt="">
       </cell>
-      <cell title="测试" is-link>
+      <cell title="兑换订单详情" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-03.png" alt="">
       </cell>
-      <cell title="测试" is-link>
+      <cell title="赚积分" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-04.png" alt="">
       </cell>
-      <cell title="测试" is-link>
+      <cell title="我的收藏" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-05.png" alt="">
       </cell>
     </group>
@@ -48,6 +48,7 @@
 
   .user-page {
     font-size: 14px;
+    height: 100%;
     background-color: #fff;
     .advs {
       min-height: 466/@rem;
