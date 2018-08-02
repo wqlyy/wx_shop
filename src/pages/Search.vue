@@ -20,12 +20,12 @@
     <div class="hotSearch" style="display: block;">
       <h1>按分值浏览</h1>
       <div class="hotClass">
-        <a href="https://m.jf.10010.com/jf-mall/msearchPoint?pointCode=1">0-1000分</a>
-        <a href="https://m.jf.10010.com/jf-mall/msearchPoint?pointCode=2">1001-2000分</a>
-        <a href="https://m.jf.10010.com/jf-mall/msearchPoint?pointCode=3">2001-3000分</a>
-        <a href="https://m.jf.10010.com/jf-mall/msearchPoint?pointCode=4">3001-5000分</a>
-        <a href="https://m.jf.10010.com/jf-mall/msearchPoint?pointCode=5">5001-10000分</a>
-        <a href="https://m.jf.10010.com/jf-mall/msearchPoint?pointCode=6">10001分以上</a>
+        <a href="javascript:;">0-1000分</a>
+        <a href="javascript:;">1001-2000分</a>
+        <a href="javascript:;">2001-3000分</a>
+        <a href="javascript:;">3001-5000分</a>
+        <a href="javascript:;">5001-10000分</a>
+        <a href="javascript:;">10001分以上</a>
       </div>
     </div>
   </div>

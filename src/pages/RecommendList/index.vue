@@ -7,8 +7,9 @@
           <h3 class="title nowrap">{{item.title}}</h3>
           <div class="price nowrap">
             <span><i class="icon icon-score">&#xe638;</i> {{item.money}}</span>
+            <span class="sale">已有 {{item.people}} 人兑换</span>
           </div>
-          <p class="sale">已有 {{item.people}} 人兑换</p>
+          <p class="shop"><i class="icon">&#xe603;</i><span class="address">{{item.address}}</span></p>
         </div>
       </div>
     </div>
@@ -73,6 +74,7 @@
         }
         .description{
           margin: 0 10/@rem;
+          padding-bottom: 5px;
           .title {
             font-size: 12px;
             text-align: left;
@@ -82,12 +84,22 @@
             font-size: 12px;
             color: #e4393c;
             text-align: left;
+            .sale {
+              float: right;
+              text-align: left;
+              color: #a6a6a6;
+              font-size: 12px;
+            }
           }
-          .sale {
+          .shop{
             text-align: left;
-            color: #a6a6a6;
-            font-size: 12px;
+            color: #0cf;
+            .address{
+              margin-left: 6px;
+              color: #333;
+            }
           }
+
         }
       }
     }

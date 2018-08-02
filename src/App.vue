@@ -1,7 +1,7 @@
 <template>
   <div id="app" style="height:100%;">
       <router-view/>
-      <TabBar />
+      <TabBar v-show="$route.meta.show"/>
   </div>
 </template>
 

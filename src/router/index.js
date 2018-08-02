@@ -18,32 +18,50 @@ export default new Router({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: Home,
+      meta: {
+        show: true
+      }
     },
     {
       path: '/category',
       name: 'Category',
-      component: Category
+      component: Category,
+      meta: {
+        show: true
+      }
     },
     {
       path: '/cart',
       name: 'Cart',
-      component: Cart
+      component: Cart,
+      meta: {
+        show: true
+      }
     },
     {
       path: '/user',
       name: 'User',
-      component: User
+      component: User,
+      meta: {
+        show: true
+      }
     },
     {
       path: '/detail/:id',
       name: 'Detail',
-      component: Detail
+      component: Detail,
+      meta: {
+        show: false
+      }
     },
     {
-      path:'/search',
-      name:'Search',
-      component:Search
+      path: '/search',
+      name: 'Search',
+      component: Search,
+      meta: {
+        show: false
+      }
     }
   ]
 })

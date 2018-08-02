@@ -38,11 +38,11 @@ Mock.mock('banner_list.json', function () {
       }, {
         url: 'javascript:;',
         img: 'https://img13.360buyimg.com/mcoss/jfs/t23251/236/1113140151/60832/6627cd22/5b517406N965d0b4a.jpg',
-        title: '送你一朵fua'
+        title: 'Come Baby'
       }, {
         url: 'javascript:;',
         img: 'https://img1.360buyimg.com/da/s750x366_jfs/t24556/120/1048702098/197464/88130084/5b4f153cN998ac1ea.jpg!cc_750x366.dpg',
-        title: '送你一朵fua'
+        title: '不在意的样子'
       }
     ]
   }
@@ -88,9 +88,10 @@ Mock.mock('recommend.json',function () {
         productId:1001,
         url: 'http://p0.qhimg.com/t01ca793f68d025a256.jpg',
         desc:'三叶指尖陀螺(颜色随机)',
-        title: '三叶指尖陀螺(颜色随机)',
+        title: '三叶指尖陀螺(颜色随机)三叶指尖陀螺(颜色随机)',
         money:99,
-        people:543
+        people:543,
+        address:'成都市天府新区支行'
       },
       {
         id:2,
@@ -99,7 +100,8 @@ Mock.mock('recommend.json',function () {
         desc:'便携式多功能垫(颜色随机)',
         title: '便携式多功能垫(颜色随机)',
         money:9998,
-        people:2018
+        people:2018,
+        address:'成都市双流支行'
       },
       {
         id:3,
@@ -108,7 +110,8 @@ Mock.mock('recommend.json',function () {
         desc:'盛纳庄园干红葡萄酒70元优惠券',
         title: '盛纳庄园干红葡萄酒70元优惠券',
         money:199,
-        people:1314
+        people:1314,
+        address:'成都市天府大道南段支行'
       },
       {
         id:4,
@@ -117,7 +120,8 @@ Mock.mock('recommend.json',function () {
         desc:'手工青柑普洱茶50元优惠券',
         title: '手工青柑普洱茶50元优惠券',
         money:899,
-        people:520
+        people:520,
+        address:'云南省昆明市支行'
       }
     ]
   }
@@ -137,7 +141,8 @@ Mock.mock('category.json',function () {
         desc:'三叶指尖陀螺(颜色随机)',
         title: '三叶指尖陀螺(颜色随机)',
         money:99,
-        people:543
+        people:543,
+        address:'成都市天府大道南段支行'
       },
       {
         id:2,
@@ -146,7 +151,8 @@ Mock.mock('category.json',function () {
         desc:'便携式多功能垫(颜色随机)',
         title: '便携式多功能垫(颜色随机)',
         money:9998,
-        people:2018
+        people:2018,
+        address:'成都市天府大道南段支行'
       },
       {
         id:3,
@@ -155,7 +161,8 @@ Mock.mock('category.json',function () {
         desc:'盛纳庄园干红葡萄酒70元优惠券',
         title: '盛纳庄园干红葡萄酒70元优惠券',
         money:199,
-        people:1314
+        people:1314,
+        address:'成都市天府大道南段支行'
       },
       {
         id:4,
@@ -164,7 +171,8 @@ Mock.mock('category.json',function () {
         desc:'手工青柑普洱茶50元优惠券',
         title: '手工青柑普洱茶50元优惠券',
         money:899,
-        people:520
+        people:520,
+        address:'成都市天府大道南段支行'
       },
       {
         id:1,
@@ -173,7 +181,8 @@ Mock.mock('category.json',function () {
         desc:'三叶指尖陀螺(颜色随机)',
         title: '三叶指尖陀螺(颜色随机)',
         money:99,
-        people:543
+        people:543,
+        address:'成都市天府大道南段支行'
       },
       {
         id:2,
@@ -182,7 +191,8 @@ Mock.mock('category.json',function () {
         desc:'便携式多功能垫(颜色随机)',
         title: '便携式多功能垫(颜色随机)',
         money:9998,
-        people:2018
+        people:2018,
+        address:'成都市天府大道南段支行'
       },
       {
         id:3,
@@ -191,7 +201,8 @@ Mock.mock('category.json',function () {
         desc:'盛纳庄园干红葡萄酒70元优惠券',
         title: '盛纳庄园干红葡萄酒70元优惠券',
         money:199,
-        people:1314
+        people:1314,
+        address:'成都市天府大道南段支行'
       },
       {
         id:4,
@@ -200,7 +211,8 @@ Mock.mock('category.json',function () {
         desc:'手工青柑普洱茶50元优惠券',
         title: '手工青柑普洱茶50元优惠券',
         money:899,
-        people:520
+        people:520,
+        address:'成都市天府大道南段支行'
       },
       {
         id:1,
@@ -209,7 +221,8 @@ Mock.mock('category.json',function () {
         desc:'三叶指尖陀螺(颜色随机)',
         title: '三叶指尖陀螺(颜色随机)',
         money:99,
-        people:543
+        people:543,
+        address:'成都市天府大道南段支行'
       },
       {
         id:2,
@@ -218,7 +231,8 @@ Mock.mock('category.json',function () {
         desc:'便携式多功能垫(颜色随机)',
         title: '便携式多功能垫(颜色随机)',
         money:9998,
-        people:2018
+        people:2018,
+        address:'成都市天府大道南段支行'
       },
       {
         id:3,
@@ -227,7 +241,8 @@ Mock.mock('category.json',function () {
         desc:'盛纳庄园干红葡萄酒70元优惠券',
         title: '盛纳庄园干红葡萄酒70元优惠券',
         money:199,
-        people:1314
+        people:1314,
+        address:'成都市天府大道南段支行'
       },
       {
         id:4,
@@ -236,7 +251,8 @@ Mock.mock('category.json',function () {
         desc:'手工青柑普洱茶50元优惠券',
         title: '手工青柑普洱茶50元优惠券',
         money:899,
-        people:520
+        people:520,
+        address:'成都市天府大道南段支行'
       },{
         id:1,
         productId:1001,
@@ -244,7 +260,8 @@ Mock.mock('category.json',function () {
         desc:'三叶指尖陀螺(颜色随机)',
         title: '三叶指尖陀螺(颜色随机)',
         money:99,
-        people:543
+        people:543,
+        address:'成都市天府大道南段支行'
       },
       {
         id:2,
@@ -253,7 +270,8 @@ Mock.mock('category.json',function () {
         desc:'便携式多功能垫(颜色随机)',
         title: '便携式多功能垫(颜色随机)',
         money:9998,
-        people:2018
+        people:2018,
+        address:'成都市天府大道南段支行'
       },
       {
         id:3,
@@ -262,7 +280,8 @@ Mock.mock('category.json',function () {
         desc:'盛纳庄园干红葡萄酒70元优惠券',
         title: '盛纳庄园干红葡萄酒70元优惠券',
         money:199,
-        people:1314
+        people:1314,
+        address:'成都市天府大道南段支行'
       },
       {
         id:4,
@@ -271,7 +290,8 @@ Mock.mock('category.json',function () {
         desc:'手工青柑普洱茶50元优惠券',
         title: '手工青柑普洱茶50元优惠券',
         money:899,
-        people:520
+        people:520,
+        address:'成都市天府大道南段支行'
       },{
         id:1,
         productId:1001,
@@ -279,7 +299,8 @@ Mock.mock('category.json',function () {
         desc:'三叶指尖陀螺(颜色随机)',
         title: '三叶指尖陀螺(颜色随机)',
         money:99,
-        people:543
+        people:543,
+        address:'成都市天府大道南段支行'
       },
       {
         id:2,
@@ -288,7 +309,8 @@ Mock.mock('category.json',function () {
         desc:'便携式多功能垫(颜色随机)',
         title: '便携式多功能垫(颜色随机)',
         money:9998,
-        people:2018
+        people:2018,
+        address:'成都市天府大道南段支行'
       },
       {
         id:3,
@@ -297,7 +319,8 @@ Mock.mock('category.json',function () {
         desc:'盛纳庄园干红葡萄酒70元优惠券',
         title: '盛纳庄园干红葡萄酒70元优惠券',
         money:199,
-        people:1314
+        people:1314,
+        address:'成都市天府大道南段支行'
       },
       {
         id:4,
@@ -306,7 +329,8 @@ Mock.mock('category.json',function () {
         desc:'手工青柑普洱茶50元优惠券',
         title: '手工青柑普洱茶50元优惠券',
         money:899,
-        people:520
+        people:520,
+        address:'成都市天府大道南段支行'
       }
     ]
   }
