@@ -19,6 +19,7 @@
 <style scoped lang="less">
   @import "../../assets/styles/mixin";
 .title{
+  padding: 20/@rem 30/@rem;
   h3{
     position: relative;
     padding-left: 15/@rem;

@@ -4,6 +4,7 @@ import Home from '@/pages/Home'
 import Category from '@/pages/Category'
 import Cart from '@/pages/Cart'
 import User from '@/pages/User'
+import Detail from '@/pages/Detail'
 
 Vue.use(Router)
 
@@ -32,6 +33,11 @@ export default new Router({
       path: '/user',
       name: 'User',
       component: User
+    },
+    {
+      path: '/detail/:id',
+      name: 'Detail',
+      component: Detail
     }
   ]
 })

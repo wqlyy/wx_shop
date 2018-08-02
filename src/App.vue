@@ -19,7 +19,7 @@
     },
     created(){
       let styleNode = document.createElement('style');
-      let scale = document.documentElement.clientWidth/16;
+      let scale = document.documentElement.clientWidth/10;
       styleNode.innerHTML = 'html{font-size:'+scale+'px!important;}';
       document.head.appendChild(styleNode);
     }

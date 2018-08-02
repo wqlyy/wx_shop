@@ -76,3 +76,49 @@ Mock.mock('cartlist.json', {
     }]
   }
 })
+
+//推荐数据
+Mock.mock('recommend.json',function () {
+  return {
+    retcode: 1,
+    retmsg: '查询成功',
+    data: [
+      {
+        id:1,
+        productId:1001,
+        url: 'http://p0.qhimg.com/t01ca793f68d025a256.jpg',
+        desc:'三叶指尖陀螺(颜色随机)',
+        title: '三叶指尖陀螺(颜色随机)',
+        money:99,
+        people:543
+      },
+      {
+        id:2,
+        productId:1003,
+        url: 'http://p0.qhimg.com/t014a9867ae0975a504.jpg',
+        desc:'便携式多功能垫(颜色随机)',
+        title: '便携式多功能垫(颜色随机)',
+        money:9998,
+        people:2018
+      },
+      {
+        id:3,
+        productId:1021,
+        url: 'http://p0.qhimg.com/t0181d071d026492266.jpg',
+        desc:'盛纳庄园干红葡萄酒70元优惠券',
+        title: '盛纳庄园干红葡萄酒70元优惠券',
+        money:199,
+        people:1314
+      },
+      {
+        id:4,
+        productId:2134,
+        url: 'http://p0.qhimg.com/t013e7edbab89fefa25.jpg',
+        desc:'手工青柑普洱茶50元优惠券',
+        title: '手工青柑普洱茶50元优惠券',
+        money:899,
+        people:520
+      }
+    ]
+  }
+});
