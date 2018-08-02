@@ -1,5 +1,5 @@
 <template>
-    <div class="search-top" :class="isScroll?'skin':''">
+    <div class="search-top" :class="{skin:isScroll?true:false,fixed:isFixed?true:false}">
       <div class="search">
         <router-link to="/search">
           <i class="icon icon-search">&#xe627;</i>
@@ -15,6 +15,10 @@
       isScroll: {
         type: Boolean,
         default: false
+      },
+      isFixed:{
+        type:Boolean,
+        default:false
       }
     },
     data() {
@@ -38,11 +42,15 @@
     height: 40px;
     padding-top: 5px;
     box-sizing: border-box;
-    background: rgba(255, 255, 255, 0);
-    position: absolute;
-    top: 0;
-    z-index: 999;
-    width: 100%;
+    background-color: #f0f0f0;
+
+    &.fixed{
+      position: absolute;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      background: rgba(255, 255, 255, 0);
+    }
     &.skin {
       background-color: #fff;
       /*border-bottom: 1px solid #F0F0F0;*/

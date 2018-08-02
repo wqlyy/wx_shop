@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="item" v-for="(item,index) in recommend_list" @click="jumpDetail(item.productId)" :key="index">
+  <div class="container" :style="{paddingTop:paddingTop+'px'}">
+    <div class="item" v-for="(item,index) in list" @click="jumpDetail(item.productId)" :key="index">
       <div class="ui-block">
         <img class="img" :alt="item.title" :src="item.url">
         <div class="description">
@@ -19,10 +19,14 @@
   export default {
     name: "index",
     props:{
-      recommend_list:{
+      list:{
         type:Array,
         default:[]
-      }
+      },
+      paddingTop:0
+    },
+    created(){
+      console.log(this.paddingTop);
     },
     methods:{
       jumpDetail(id){

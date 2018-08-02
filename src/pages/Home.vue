@@ -1,7 +1,7 @@
 <template>
   <view-box ref="ViewBox" class="home">
       <!--顶部搜索-->
-      <SearchBar :isScroll="isScroll"/>
+      <SearchBar :isScroll="isScroll" :isFixed="isFixed"/>
       <!--轮播图-->
       <swiper ref="swiper" :auto="true" :loop="true" :list="banner_list" class="home-swiper"/>
       <!--九宫格-->
@@ -43,7 +43,7 @@
     <!--推荐-->
     <div class="recommend-container">
       <Title title="推荐"/>
-      <RecommendList :recommend_list="recommend_list"/>
+      <RecommendList :list="recommend_list"/>
     </div>
 
       <!--换购-->
@@ -81,7 +81,7 @@
       <!--推荐-->
       <div class="recommend-container">
         <Title title="推荐"/>
-        <RecommendList :recommend_list="recommend_list"/>
+        <RecommendList :list="recommend_list"/>
       </div>
 
       <Divider>我是有底线的</Divider>
@@ -112,7 +112,8 @@
       return {
         banner_list: [],
         recommend_list: [],
-        isScroll:false
+        isScroll:false,
+        isFixed:true
       }
     },
     created() {
