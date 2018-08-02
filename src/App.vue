@@ -1,20 +1,15 @@
 <template>
   <div id="app" style="height:100%;">
-    <view-box>
       <router-view/>
-      <TabBar slot="bottom"/>
-    </view-box>
-
+      <TabBar />
   </div>
 </template>
 
 <script>
-  import {ViewBox} from 'vux'
   import TabBar from '@/components/TabBar'
   export default {
     name: 'app',
     components:{
-      ViewBox,
       TabBar
     },
     created(){
@@ -22,7 +17,8 @@
       let scale = document.documentElement.clientWidth/10;
       styleNode.innerHTML = 'html{font-size:'+scale+'px!important;}';
       document.head.appendChild(styleNode);
-    }
+    },
+
   }
 </script>
 

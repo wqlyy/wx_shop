@@ -1,76 +1,44 @@
 <template>
-  <div class="home">
-    <!--顶部搜索-->
-    <SearchBar :isScroll="isScroll"/>
-    <!--轮播图-->
-    <swiper :auto="true" :loop="true" :list="banner_list" class="home-swiper"/>
-    <!--九宫格-->
-    <flexbox :gutter="0" wrap="wrap" class="menu-container">
-      <flexbox-item class="item" :span="1/4">
-        <div class="content">
-          <div class="menu_icon">
-            <img src="../assets/images/01.png" alt="">
-          </div>
-          <p>兑换排行</p>
-        </div>
-      </flexbox-item>
-      <flexbox-item class="item" :span="1/4">
-        <div class="content">
-          <div class="menu_icon">
-            <img src="../assets/images/02.png" alt="">
-          </div>
-          <p>兑换排行</p>
-        </div>
-      </flexbox-item>
-      <flexbox-item class="item" :span="1/4">
-        <div class="content">
-          <div class="menu_icon">
-            <img src="../assets/images/03.png" alt="">
-          </div>
-          <p>兑换排行</p>
-        </div>
-      </flexbox-item>
-      <flexbox-item class="item" :span="1/4">
-        <div class="content">
-          <div class="menu_icon">
-            <img src="../assets/images/04.png" alt="">
-          </div>
-          <p>兑换排行</p>
-        </div>
-      </flexbox-item>
-    </flexbox>
-
-    <!--换购-->
-    <div class="party-container">
-      <Title title="积分乐园"/>
-      <div class="list">
-        <div class="banner">
-          <img src="https://res.mall.10010.cn/jf-mall/res/mobile/images/fourth/ad_01.png" />
-        </div>
-
-        <div class="other">
-          <!-- 将请期待 -->
-          <div class="item">
-            <div class="img">
-              <img src="https://res.mall.10010.cn/jf-mall/res/mobile/images/fourth/ad_jf_01.png"/>
+  <view-box ref="ViewBox" class="home">
+      <!--顶部搜索-->
+      <SearchBar :isScroll="isScroll"/>
+      <!--轮播图-->
+      <swiper ref="swiper" :auto="true" :loop="true" :list="banner_list" class="home-swiper"/>
+      <!--九宫格-->
+      <flexbox :gutter="0" wrap="wrap" class="menu-container">
+        <flexbox-item class="item" :span="1/4">
+          <div class="content">
+            <div class="menu_icon">
+              <img src="../assets/images/01.png" alt="">
             </div>
-            <div class="txt">
-              <div class="head">满减优惠</div>
-              <div class="cont">价格更实惠</div>
-            </div>
+            <p>兑换排行</p>
           </div>
-          <div class="item">
-            <div class="img">
-              <img src="https://res.mall.10010.cn/jf-mall/res/mobile/images/fourth/ad_jf_02.png"/>
+        </flexbox-item>
+        <flexbox-item class="item" :span="1/4">
+          <div class="content">
+            <div class="menu_icon">
+              <img src="../assets/images/02.png" alt="">
             </div>
-            <div class="txt">
-              <div class="head">折扣专区</div>
-              <div class="cont">品质不打折</div>
-            </div>
+            <p>兑换排行</p>
           </div>
-        </div>
-      </div>
-    </div>
+        </flexbox-item>
+        <flexbox-item class="item" :span="1/4">
+          <div class="content">
+            <div class="menu_icon">
+              <img src="../assets/images/03.png" alt="">
+            </div>
+            <p>兑换排行</p>
+          </div>
+        </flexbox-item>
+        <flexbox-item class="item" :span="1/4">
+          <div class="content">
+            <div class="menu_icon">
+              <img src="../assets/images/04.png" alt="">
+            </div>
+            <p>兑换排行</p>
+          </div>
+        </flexbox-item>
+      </flexbox>
 
     <!--推荐-->
     <div class="recommend-container">
@@ -78,12 +46,50 @@
       <RecommendList :recommend_list="recommend_list"/>
     </div>
 
-    <Divider>我是有底线的</Divider>
-  </div>
+      <!--换购-->
+      <div class="party-container">
+        <Title title="积分乐园"/>
+        <div class="list">
+          <div class="banner">
+            <img src="https://res.mall.10010.cn/jf-mall/res/mobile/images/fourth/ad_01.png" />
+          </div>
+
+          <div class="other">
+            <!-- 将请期待 -->
+            <div class="item">
+              <div class="img">
+                <img src="https://res.mall.10010.cn/jf-mall/res/mobile/images/fourth/ad_jf_01.png"/>
+              </div>
+              <div class="txt">
+                <div class="head">满减优惠</div>
+                <div class="cont">价格更实惠</div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="img">
+                <img src="https://res.mall.10010.cn/jf-mall/res/mobile/images/fourth/ad_jf_02.png"/>
+              </div>
+              <div class="txt">
+                <div class="head">折扣专区</div>
+                <div class="cont">品质不打折</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--推荐-->
+      <div class="recommend-container">
+        <Title title="推荐"/>
+        <RecommendList :recommend_list="recommend_list"/>
+      </div>
+
+      <Divider>我是有底线的</Divider>
+  </view-box>
 </template>
 
 <script>
-  import {Swiper, Flexbox, FlexboxItem,Divider} from 'vux';
+  import {ViewBox,Swiper, Flexbox, FlexboxItem,Divider} from 'vux';
   import Axios from 'axios'
 
   import Title from '../components/Title'
@@ -94,6 +100,7 @@
     name: "home",
     components: {
       Swiper,
+      ViewBox,
       Divider,
       Flexbox,
       FlexboxItem,
@@ -104,12 +111,18 @@
     data() {
       return {
         banner_list: [],
-        recommend_list: []
+        recommend_list: [],
+        isScroll:false
       }
     },
     created() {
       this.getBannerList();
       this.getRecommendList();
+    },
+    mounted(){
+      this.bannerHeight = parseFloat(this.$refs.swiper.getHeight());
+      this.ViewBox = this.$refs.ViewBox;
+      this.ViewBox.getScrollBody().addEventListener('scroll',this.handleSearchBar)
     },
     methods: {
       getBannerList() {
@@ -131,6 +144,14 @@
         }, (err) => {
           console.log(err);
         })
+      },
+
+      handleSearchBar(){
+        if(this.ViewBox.getScrollTop()>=this.bannerHeight){
+          this.isScroll = true
+        }else{
+          this.isScroll = false
+        }
       }
     }
   }
@@ -140,6 +161,7 @@
   @import "../assets/styles/mixin";
   .home{
     font-size: 0;
+
     .vux-divider{
       font-size: 14px;
     }
