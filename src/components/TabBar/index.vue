@@ -4,7 +4,7 @@
       <i slot="icon" class="icon">&#xe626;</i>
       <span slot="label">首页</span>
     </tabbar-item>
-    <tabbar-item link="/category" :selected="$route.name==='Category'">
+    <tabbar-item link="/category" :selected="$route.name==='Category'||$route.name==='Search'">
       <i slot="icon" class="icon">&#xe7f9;</i>
       <span slot="label">列表</span>
     </tabbar-item>

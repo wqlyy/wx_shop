@@ -5,6 +5,7 @@ import Category from '@/pages/Category'
 import Cart from '@/pages/Cart'
 import User from '@/pages/User'
 import Detail from '@/pages/Detail'
+import Search from '@/pages/Search'
 
 Vue.use(Router)
 
@@ -38,6 +39,11 @@ export default new Router({
       path: '/detail/:id',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path:'/search',
+      name:'Search',
+      component:Search
     }
   ]
 })
