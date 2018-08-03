@@ -18,7 +18,7 @@
       </div>
       <li v-for="(item) in searchList" :key="item.id" @click="goDetail(item)">
         <router-link to=''>
-          <span>{{ item.name }}</span>
+          <span>{{ item.content }}</span>
         </router-link>
       </li>
     </div>
@@ -26,30 +26,45 @@
       <p class="separate"></p>
       <div class="title">
         <p class="searched">历史搜索</p>
-        <p class="deleteAll" @click="clear">清空历史</p>
+        <p class="deleteAll" @click="popConfirm('确认清空历史')">清空历史</p>
       </div>
       <ul class="history">
         <li v-for="(item) in history" :key="item.id" @click="reSearch(item)">
           <router-link to=''>
-            <span class="hisName">{{ item.name }}</span>
-            <span class="hisDate">{{ item.date }}</span>
+            <span class="hisName">{{ item.content }}</span>
+            <span class="hisDate">{{ item.date|dateFormat('YYYY-MM-DD') }}</span>
           </router-link>
         </li>
         <p class="hasHis" v-show="history.length === 0">暂无历史数据</p>
       </ul>
     </div>
+    <Loading :show="isLoading" />
+    <confirm v-model="isConfirmed" :content="confirmContent" @on-confirm="clear"/>
   </div>
 </template>
 <script>
+
+  import {dateFormat ,Loading,Confirm} from 'vux'
   export default {
+    filters: {
+      dateFormat
+    },
+    components:{
+      Loading,
+      Confirm
+    },
     data () {
       return {
+        isConfirmed:false,
+        confirmContent:'',
+        isLoading:false,//默认不显示loading
         searchContent: '',
         searchSta: false,
         historySta: true,
         cancelSta: false,
-        history: [{id:1,name:'测试'},{id:2,name:'测试3'}],
-        searchList: []
+        history: [],
+        searchList: [],
+        id:0
       }
     },
     methods: {
@@ -62,8 +77,13 @@
         console.log('进入商品详情：',item);
         this.$router.replace({ name: 'Detail', params: { id: item.gid }})
       },
+      popConfirm(content){
+        this.isConfirmed=true;
+        this.confirmContent = content;
+      },
       clear () {
-        console.log('清空历史')
+
+        console.log('确认清空历史')
       },
       hotSearch () {
         console.log('热搜')
@@ -83,6 +103,8 @@
         this.searchList = []
       },
       search () {
+
+        let now = Date.now();
         this.searchSta = true
         this.historySta = false
         this.cancelSta = true
@@ -91,8 +113,17 @@
         if (this.searchContent === '') {
           return
         }
-        this.searchList = [{gid:1,name:'哈哈哈哈'},{gid:2,name:'呵呵呵呵'}]
-
+        //搜索结果
+        this.isLoading = true
+        setTimeout( ()=> {
+          this.isLoading=false
+        },3000)
+        //添加历史
+        this.history.push({
+          id:this.id++,
+          date:now,
+          content:this.searchContent
+        })
       }
     },
     mounted: function () {
