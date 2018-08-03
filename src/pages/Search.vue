@@ -14,7 +14,7 @@
     <div class="nowSearch" v-show="searchSta">
       <div class="noSearch" v-show="searchList.length === 0">
         <p>很抱歉，没有找到符合您要求的商品~</p>
-        <button><router-link to="/catalog">开始购物</router-link></button>
+        <button><router-link to="/category">开始购物</router-link></button>
       </div>
       <li v-for="(item) in searchList" :key="item.id" @click="goDetail(item)">
         <router-link to=''>

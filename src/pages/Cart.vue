@@ -1,7 +1,6 @@
 <template>
   <div class="cart-page">
     <view-box>
-      <x-header slot="header" title="清单列表"/>
       <div class="container">
         <flexbox orient="vertical" class="list-box">
           <flexbox-item class="item vux-1px-b" v-for="(item,index) in cartList" :key="index">
@@ -51,6 +50,9 @@
       XHeader,
       Flexbox,
       FlexboxItem
+    },
+    created(){
+      document.title='清单列表';
     },
     data(){
       return {

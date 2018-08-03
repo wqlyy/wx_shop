@@ -33,6 +33,7 @@
       }
     },
     created(){
+      document.title = '积分商城'
       this.getCategoryList()
     },
     methods:{

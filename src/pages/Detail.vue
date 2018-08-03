@@ -1,7 +1,6 @@
 <template>
   <div class="detail-page" style="height: 100%;">
-    <view-box>
-      <x-header slot="header" title="兑换商品详情"/>
+    <view-box body-padding-bottom="50">
       <div class="detail-box">
         <div class="preview">
           <swiper :show-desc-mask="false" :show-dots="false" :list="list"></swiper>
@@ -38,17 +37,18 @@
             sit velit veritatis.
           </div>
         </Group>
-        <div class="detail-footer" slot="bottom">
-          <div class="left">
-            <div class="store">
-              <i class="icon collection">&#xe628;</i>
-              <p>收藏</p>
-            </div>
+        <Divider>到底咯~~</Divider>
+      </div>
+      <div class="detail-footer" slot="bottom">
+        <div class="left">
+          <div class="store">
+            <i class="icon collection">&#xe628;</i>
+            <p>收藏</p>
           </div>
-          <div class="right">
-            <button class="add-cart" @click="addCartList">加入清单</button>
-            <button class="buy-now">立即兑换</button>
-          </div>
+        </div>
+        <div class="right">
+          <button class="add-cart" @click="addCartList">加入清单</button>
+          <button class="buy-now">立即兑换</button>
         </div>
       </div>
     </view-box>
@@ -56,7 +56,7 @@
 </template>
 
 <script>
-  import {ViewBox, XHeader, Swiper, Group} from 'vux'
+  import {ViewBox, XHeader, Swiper, Group,Divider} from 'vux'
 
   export default {
     name: "detail",
@@ -64,7 +64,8 @@
       ViewBox,
       XHeader,
       Swiper,
-      Group
+      Group,
+      Divider
     },
     data() {
       return {
@@ -77,12 +78,13 @@
             url: 'javascript:',
             img: 'http://p0.qhimg.com/t014a9867ae0975a504.jpg',
             title: '送你一次旅行',
-            fallbackImg: 'https://static.vux.li/demo/3.jpg'
+            fallbackImg: 'http://p0.qhimg.com/t014a9867ae0975a504.jpg'
           }
         ]
       }
     },
     created() {
+      document.title='兑换商品详情'
       console.log('选择的产品id:', this.$route.params.id)
     },
     methods:{
@@ -101,12 +103,12 @@
     font-size: 0;
     .detail-box {
       font-size: 16px;
-
       .abstract {
         padding: 10/@rem 20/@rem;
         box-sizing: border-box;
         .title {
           color: #333;
+          font-size: 14px;
         }
         .delivery {
           height: 40px;
@@ -124,77 +126,79 @@
         }
       }
       .intro {
-        padding: 10/@rem 20/@rem;
+        padding: 20/@rem 20/@rem;
         box-sizing: border-box;
         background-color: #fff;
         .title {
-          font-size: 18px;
+          font-size: 16px;
+          font-weight: normal;
           color: #333;
         }
         .content {
-
+          padding: 10px 0;
+          color: #666;
         }
       }
-      .detail-footer{
-        z-index: 3;
-        width: 100%;
+    }
+    .detail-footer{
+      z-index: 3;
+      width: 100%;
+      height: 50px;
+      position: absolute;
+      bottom: 0;
+      border-top: 1px solid #ebebeb;
+      background: #fff;
+      .left{
+        width: 40%;
+        float: left;
         height: 50px;
-        position: absolute;
-        bottom: 0;
-        border-top: 1px solid #ebebeb;
-        background: #fff;
-        .left{
-          width: 40%;
-          float: left;
+        text-align: center;
+        font-size: 0;
+        margin: 0;
+        border: none;
+        p{
+          font-size: 14px;
+          line-height: 20px;
+          color:#666;
+        }
+        img{
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          margin-top: 8px;
+        }
+        .store{
+          width: 100%;
+          float: right;
           height: 50px;
-          text-align: center;
-          font-size: 0;
-          margin: 0;
-          border: none;
-          p{
-            font-size: 14px;
-            line-height: 20px;
-            color:#666;
-          }
-          img{
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            margin-top: 8px;
-          }
-          .store{
-            width: 100%;
-            float: right;
-            height: 50px;
-            .collection{
-              font-size: 16px;
-            }
+          .collection{
+            font-size: 16px;
           }
         }
-        .right{
-          float: right;
-          width: 60%;
+      }
+      .right{
+        float: right;
+        width: 60%;
+        height: 50px;
+        font-size: 0;
+        button{
+          padding: 0;
+          margin: 0;
+          border: none;
           height: 50px;
-          font-size: 0;
-          button{
-            padding: 0;
-            margin: 0;
-            border: none;
-            height: 50px;
-            font-size: 14px;
-            color:#ebebeb;
-          }
-          .add-cart{
-            background: #0cf;
-            width: 45%;
-            float: left;
-            outline: none;
-          }
-          .buy-now{
-            background: #e4393c;
-            width: 55%;
-            float: right;
-          }
+          font-size: 14px;
+          color:#ebebeb;
+        }
+        .add-cart{
+          background: #0cf;
+          width: 45%;
+          float: left;
+          outline: none;
+        }
+        .buy-now{
+          background: #e4393c;
+          width: 55%;
+          float: right;
         }
       }
     }

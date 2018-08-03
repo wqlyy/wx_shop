@@ -1,7 +1,7 @@
 <template>
   <div class="cart-page">
     <view-box>
-      <x-header slot="header" title="我的订单"/>
+      <div>所有订单列表</div>
 
     </view-box>
   </div>
@@ -16,6 +16,9 @@
       XHeader,
       Flexbox,
       FlexboxItem
+    },
+    created(){
+      document.title = '我的订单'
     },
     data(){
       return {
