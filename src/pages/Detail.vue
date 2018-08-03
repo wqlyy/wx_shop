@@ -180,13 +180,13 @@
             color:#ebebeb;
           }
           .add-cart{
-            background: #999;
+            background: #0cf;
             width: 45%;
             float: left;
             outline: none;
           }
           .buy-now{
-            background: #0cf;
+            background: #e4393c;
             width: 55%;
             float: right;
           }
