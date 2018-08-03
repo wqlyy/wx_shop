@@ -78,7 +78,7 @@
     },
     methods:{
       accountPage(){
-
+        this.$router.push({ name: 'Order'})
       }
     }
   }

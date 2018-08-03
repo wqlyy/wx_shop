@@ -12,19 +12,19 @@
       </div>
     </div>
     <group gutter="0">
-      <cell title="兑换记录" is-link>
+      <cell title="项目1" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-01.png" alt="">
       </cell>
-      <cell title="我的奖品" is-link>
+      <cell title="项目2" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-02.png" alt="">
       </cell>
-      <cell title="兑换订单详情" is-link>
+      <cell title="项目3" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-03.png" alt="">
       </cell>
-      <cell title="赚积分" is-link>
+      <cell title="项目4" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-04.png" alt="">
       </cell>
-      <cell title="我的收藏" is-link>
+      <cell title="项目5" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-05.png" alt="">
       </cell>
     </group>

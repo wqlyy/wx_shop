@@ -36,13 +36,6 @@ export default new Router({
       path: '/cart',
       name: 'Cart',
       component: Cart,
-      children:[
-        {
-          path:'order',
-          name:'Order',
-          component:Order
-        }
-      ],
       meta: {
         show: true
       }
@@ -51,6 +44,14 @@ export default new Router({
       path: '/user',
       name: 'User',
       component: User,
+      meta: {
+        show: true
+      }
+    },
+    {
+      path: '/order',
+      name: 'Order',
+      component: Order,
       meta: {
         show: true
       }
