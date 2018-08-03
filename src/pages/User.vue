@@ -12,7 +12,7 @@
       </div>
     </div>
     <group gutter="0">
-      <cell title="项目1" is-link>
+      <cell title="我的订单" is-link link="/order">
         <img slot="icon" class="user-icon" src="../assets/images/user-01.png" alt="">
       </cell>
       <cell title="项目2" is-link>

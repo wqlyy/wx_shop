@@ -53,7 +53,7 @@ export default new Router({
       name: 'Order',
       component: Order,
       meta: {
-        show: true
+        show: false
       }
     },
     {
