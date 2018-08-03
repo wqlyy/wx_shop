@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="right">
-            <button class="add-cart">加入清单</button>
+            <button class="add-cart" @click="addCartList">加入清单</button>
             <button class="buy-now">立即兑换</button>
           </div>
         </div>
@@ -84,6 +84,11 @@
     },
     created() {
       console.log('选择的产品id:', this.$route.params.id)
+    },
+    methods:{
+      addCartList(){
+        this.$router.push({name:'Cart',params:{}})
+      }
     }
   }
 </script>

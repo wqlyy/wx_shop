@@ -6,6 +6,7 @@ import Cart from '@/pages/Cart'
 import User from '@/pages/User'
 import Detail from '@/pages/Detail'
 import Search from '@/pages/Search'
+import Order from '@/pages/Order'
 
 Vue.use(Router)
 
@@ -35,6 +36,13 @@ export default new Router({
       path: '/cart',
       name: 'Cart',
       component: Cart,
+      children:[
+        {
+          path:'order',
+          name:'Order',
+          component:Order
+        }
+      ],
       meta: {
         show: true
       }
