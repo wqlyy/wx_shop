@@ -27,7 +27,6 @@
       paddingTop:0
     },
     created(){
-      console.log(this.paddingTop);
     },
     methods:{
       jumpDetail(id){

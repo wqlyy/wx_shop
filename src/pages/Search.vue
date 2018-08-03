@@ -1,170 +1,262 @@
 <template>
   <div class="search-page">
-    <div class="seach_wap">
-      <div class="search_div">
-        <input type="text" id="searchInputBox" class="search_goods" placeholder="请输入商品名称进行搜索">
-        <img src="../assets/images/delete_little.png" style="display: none;">
-        <a href="javascript:void(0);" id="" class="seach"></a>
+    <div class="search-top">
+      <span @click="$router.go(-1)">
+        <i class="icon icon-arrow-left">&#xe617;</i>
+      </span>
+      <div class="search">
+        <i class="icon icon-search">&#xe627;</i>
+        <input type="text" class="input" @click="searchInput" v-model="searchContent">
+        <button class="cancel" @click="cancelSearch" v-show="cancelSta">取消</button>
+        <button class="btn-search" @click="search">搜索</button>
       </div>
     </div>
-    <div class="hotSearch" style="display: block;">
-      <h1>热门搜索</h1>
-      <div class="hotClass">
-        <a href="javascript:;">充值卡</a>
-        <a href="javascript:;">话费</a>
-        <a href="javascript:;">流量</a>
-        <a href="javascript:;">家居用品</a>
-        <a href="javascript:;">手机配件</a>
+    <div class="nowSearch" v-show="searchSta">
+      <div class="noSearch" v-show="searchList.length === 0">
+        <p>很抱歉，没有找到符合您要求的商品~</p>
+        <button><router-link to="/catalog">开始购物</router-link></button>
       </div>
+      <li v-for="(item) in searchList" :key="item.id" @click="goDetail(item)">
+        <router-link to=''>
+          <span>{{ item.name }}</span>
+        </router-link>
+      </li>
     </div>
-    <div class="hotSearch" style="display: block;">
-      <h1>按分值浏览</h1>
-      <div class="hotClass">
-        <a href="javascript:;">0-1000分</a>
-        <a href="javascript:;">1001-2000分</a>
-        <a href="javascript:;">2001-3000分</a>
-        <a href="javascript:;">3001-5000分</a>
-        <a href="javascript:;">5001-10000分</a>
-        <a href="javascript:;">10001分以上</a>
+    <div class="history-search" v-show="historySta">
+      <p class="separate"></p>
+      <div class="title">
+        <p class="searched">历史搜索</p>
+        <p class="deleteAll" @click="clear">清空历史</p>
       </div>
+      <ul class="history">
+        <li v-for="(item) in history" :key="item.id" @click="reSearch(item)">
+          <router-link to=''>
+            <span class="hisName">{{ item.name }}</span>
+            <span class="hisDate">{{ item.date }}</span>
+          </router-link>
+        </li>
+        <p class="hasHis" v-show="history.length === 0">暂无历史数据</p>
+      </ul>
     </div>
   </div>
 </template>
-
 <script>
-  import { Search } from 'vux'
-
   export default {
-    components: {
-      Search
-    },
-    methods: {
-      setFocus () {
-        this.$refs.search.setFocus()
-      },
-      resultClick (item) {
-        window.alert('you click the result item: ' + JSON.stringify(item))
-      },
-      getResult (val) {
-        console.log('on-change', val)
-        this.results = val ? getResult(this.value) : []
-      },
-      onSubmit () {
-        this.$refs.search.setBlur()
-        this.$vux.toast.show({
-          type: 'text',
-          position: 'top',
-          text: 'on submit'
-        })
-      },
-      onFocus () {
-        console.log('on focus')
-      },
-      onCancel () {
-        console.log('on cancel')
-      }
-    },
     data () {
       return {
-        results: [],
-        value: 'test'
+        searchContent: '',
+        searchSta: false,
+        historySta: true,
+        cancelSta: false,
+        history: [{id:1,name:'测试'},{id:2,name:'测试3'}],
+        searchList: []
       }
+    },
+    methods: {
+      reSearch (item) {
+        this.searchContent = item.name
+        this.search()
+      },
+      goDetail (item) {
+        //  进入详情页
+        console.log('进入商品详情：',item);
+        this.$router.replace({ name: 'Detail', params: { id: item.gid }})
+      },
+      clear () {
+        console.log('清空历史')
+      },
+      hotSearch () {
+        console.log('热搜')
+      },
+      searchInput () {
+        this.searchSta = true
+        this.historySta = false
+        this.cancelSta = true
+        document.querySelector('.input').style.width = '60%'
+      },
+      cancelSearch () {
+        this.searchSta = false
+        this.historySta = true
+        this.cancelSta = false
+        document.querySelector('.input').style.width = '75%'
+        this.searchContent = ''
+        this.searchList = []
+      },
+      search () {
+        this.searchSta = true
+        this.historySta = false
+        this.cancelSta = true
+        document.querySelector('.input').style.width = '60%'
+        //  获取查询信息
+        if (this.searchContent === '') {
+          return
+        }
+        this.searchList = [{gid:1,name:'哈哈哈哈'},{gid:2,name:'呵呵呵呵'}]
+
+      }
+    },
+    mounted: function () {
     }
   }
 </script>
 
-<style scoped lang="less">
-.search-page{
-  background-color: #fff;
-  height: 100%;
-  .seach_wap {
-    background-color: #f2f2f2;
-    padding: 5px 0;
-    .search_div {
-      width: 100%;
-      height: 30px;
-      position: relative;
-      .seach {
-        position: absolute;
-        text-decoration: none;
-        color: #666;
-        width: 70px;
+<style lang='less' scoped>
+  .search-page {
+    font-size: 16px;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    height: 100%;
+    .search-top {
+      background: #f2f2f2;
+      height: 50px;
+      .icon-arrow-left {
+        line-height: 50px;
+        margin-left: 2%;
+      }
+      .search {
         height: 30px;
-        line-height: 28px;
-        text-align: center;
-        background: url(../assets/images/search_tu.png) 50% no-repeat;
-        -moz-background-size: 70px;
-        -o-background-size: 70px;
-        -webkit-background-size: 70px;
-        background-size: 70px;
-        font-size: 13px;
-        right: 1%;
-        top: 0px;
-        border-bottom-right-radius: 3px;
-        border-top-right-radius: 3px;
+        width: 85%;
+        vertical-align: top;
+        margin-top: 10px;
+        margin-left: 2%;
+        border-radius: 8px;
         display: inline-block;
-        border: 1px solid #ddd;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
+        overflow: hidden;
+        font-size: 0;
+        background: #fff;
+        .icon-search {
+          margin: 0 2%;
+          height: 30px;
+          line-height: 30px;
+          width: 6%;
+          color: #333;
+          font-size: 15px;
+        }
+        input {
+          height: 30px;
+          vertical-align: top;
+          outline: none;
+          border: none;
+          width: 75%;
+        }
+        .cancel{
+          height: 30px;
+          width: 15%;
+          background: none;
+          border: none;
+          outline: none;
+          color: #00B2EE;
+        }
+        .btn-search {
+          border: none;
+          background: #0cf;
+          color: #fff;
+          height: 30px;
+          line-height: 30px;
+          width: 15%;
+          vertical-align: top;
+          margin: 0;
+          padding: 0;
+          outline: none;
+        }
       }
-      img {
-        position: absolute;
-        right: 82px;
-        top: 8px;
-        display: none;
+    }
+    .history-search {
+      .separate {
+        width: 100%;
+        height: 1px;
+        background: #eee;
+        margin: 0;
+        padding: 0;
       }
-      .search_goods {
-        display: block;
-        border-radius: 4px;
-        background: url(../assets/images/SearchIcon.png) 10px 50% no-repeat #fff;
-        -moz-background-size: 15px;
-        -o-background-size: 15px;
-        -webkit-background-size: 15px;
-        background-size: 15px;
-        font-size: 13px;
-        padding-left: 30px;
-        padding-right: 100px;
-        color: #BDBDBC;
-        width: 98%;
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
+      .title {
         height: 30px;
-        margin: 0 auto;
-        border: 1px solid #ddd;
+        p {
+          margin: 0;
+          padding: 0;
+          line-height: 30px;
+          color: #333;
+        }
+        .searched {
+          float: left;
+          margin-left: 5%;
+        }
+        .deleteAll {
+          float: right;
+          margin-right: 5%;
+          color: #00ccff;
+        }
+      }
+      .history{
+        margin: 0;
+        padding: 0;
+        li{
+          list-style: none;
+          height: 30px;
+          line-height: 30px;
+          color:#999;
+          border-top: 1px solid #ddd;
+          padding: 0 2%;
+          font-size: 14px;
+          a{
+            color: #999;
+          }
+          .hisName{
+            float: left;
+            margin-left: 2%;
+          }
+          .hisDate{
+            margin-right: 2%;
+            float: right;
+          }
+        }
+        .hasHis{
+          text-align: center;
+          color:#999;
+        }
+      }
+    }
+    .nowSearch{
+      p{
+        text-align: center;
+        color:#999;
+      }
+      .noSearch{
+        text-align: center;
+        color:#999;
+        margin-top: 15%;
+        p{
+          text-align: center;
+          color:#999;
+        }
+        button{
+          background: #0cf;
+          border: none;
+          height: 40px;
+          width: 50%;
+          font-size: 0.875em;
+          border-radius: 4px;
+          margin-top: 8%;
+          a{
+            color: #fff;
+            text-decoration: none;
+            display: block;
+          }
+        }
+      }
+      li{
+        list-style: none;
+        height: 30px;
+        line-height: 30px;
+        color:#999;
+        border-bottom: 1px solid #ebebeb;
+        padding: 0 2%;
+        a{
+          color: #999;
+          text-decoration: none;
+        }
       }
     }
   }
-  .hotSearch{
-    box-sizing: border-box;
-    padding: 10px 15px;
-    overflow: hidden;
-    h1 {
-      font-size: 14px;
-      color: #333;
-      line-height: 30px;
-      font-family: "Microsoft YaHei";
-    }
-    .hotClass{
-      a{
-        text-decoration: none;
-        display: inline-block;
-        width: 30%;
-        float: left;
-        height: 30px;
-        font-size: 12px;
-        line-height: 28px;
-        color: #666;
-        text-align: center;
-        box-sizing: border-box;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px;
-        border: 1px solid #d2d2d2;
-        margin: 5px 3% 5px 0;
-      }
-    }
-  }
-}
 </style>
