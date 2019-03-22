@@ -91,6 +91,7 @@
 <script>
   import {ViewBox,Swiper, Flexbox, FlexboxItem,Divider} from 'vux';
   import Axios from 'axios'
+import {getBanner} from '../api'
 
   import Title from '../components/Title'
   import RecommendList from './RecommendList'
@@ -116,7 +117,9 @@
         isFixed:true
       }
     },
+
     created() {
+      console.log(getBanner());
       this.getBannerList();
       this.getRecommendList();
     },
