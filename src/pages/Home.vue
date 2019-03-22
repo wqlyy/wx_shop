@@ -11,7 +11,7 @@
             <div class="menu_icon">
               <img src="../assets/images/01.png" alt="">
             </div>
-            <p>兑换排行</p>
+            <p>今日必兑</p>
           </div>
         </flexbox-item>
         <flexbox-item class="item" :span="1/4">
@@ -19,7 +19,7 @@
             <div class="menu_icon">
               <img src="../assets/images/02.png" alt="">
             </div>
-            <p>兑换排行</p>
+            <p>精选好货</p>
           </div>
         </flexbox-item>
         <flexbox-item class="item" :span="1/4">
@@ -27,7 +27,7 @@
             <div class="menu_icon">
               <img src="../assets/images/03.png" alt="">
             </div>
-            <p>兑换排行</p>
+            <p>最新活动</p>
           </div>
         </flexbox-item>
         <flexbox-item class="item" :span="1/4">

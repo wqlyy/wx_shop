@@ -6,11 +6,11 @@
     </tabbar-item>
     <tabbar-item link="/category" :selected="$route.name==='Category'||$route.name==='Search'">
       <i slot="icon" class="icon">&#xe7f9;</i>
-      <span slot="label">列表</span>
+      <span slot="label">分类</span>
     </tabbar-item>
     <tabbar-item link="/cart" :selected="$route.name==='Cart'">
       <i slot="icon" class="icon">&#xe656;</i>
-      <span slot="label">清单</span>
+      <span slot="label">购物车</span>
     </tabbar-item>
     <tabbar-item link="/user" :selected="$route.name==='User'">
       <i slot="icon" class="icon">&#xe671;</i>

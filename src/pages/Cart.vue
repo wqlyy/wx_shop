@@ -52,7 +52,10 @@
       FlexboxItem
     },
     created(){
-      document.title='清单列表';
+      document.title='购物车';
+    },
+    destroyed(){
+      document.title='积分商城';
     },
     data(){
       return {
@@ -181,6 +184,6 @@
 
     }
   }
-  
+
 }
 </style>

@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="right">
-          <button class="add-cart" @click="addCartList">加入清单</button>
+          <button class="add-cart" @click="addCartList">加入购物车</button>
           <button class="buy-now">立即兑换</button>
         </div>
       </div>

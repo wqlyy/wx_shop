@@ -1,51 +1,125 @@
 <template>
   <div class="user-page">
-    <div class="advs">
-      <div class="user-bg">
-        <div class="user-head">
-          <img src="../assets/images/user-head.jpg" alt="">
+    <!--<div class="advs">-->
+      <!--<div class="user-bg">-->
+        <!--<div class="user-head">-->
+          <!--<img src="../assets/images/user-head.jpg" alt="">-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="user-info">-->
+        <!--<h4>用户名</h4>-->
+        <!--<p>10000积分</p>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="top">
+      <div class="cell">
+        <span>10000</span>
+        <p>我的积分</p>
+      </div>
+      <div class="cell">
+        <div class="outer">
+          <div class="inner">签到</div>
         </div>
       </div>
-      <div class="user-info">
-        <h4>用户名</h4>
-        <p>10000积分</p>
+      <div class="cell">
+        <span>3</span>
+        <p>签到次数</p>
       </div>
     </div>
+    <card>
+      <div slot="content" class="card-flex">
+        <div class="vux-1px-r">
+          获得积分
+        </div>
+        <div>
+          使用积分
+        </div>
+      </div>
+    </card>
     <group gutter="0">
-      <cell title="我的订单" is-link link="/order">
+      <cell title="我兑换的礼品" is-link link="/order">
         <img slot="icon" class="user-icon" src="../assets/images/user-01.png" alt="">
       </cell>
-      <cell title="项目2" is-link>
+      <cell title="积分兑换礼品" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-02.png" alt="">
       </cell>
-      <cell title="项目3" is-link>
+      <cell title="查看积分明细记录" is-link>
         <img slot="icon" class="user-icon" src="../assets/images/user-03.png" alt="">
-      </cell>
-      <cell title="项目4" is-link>
-        <img slot="icon" class="user-icon" src="../assets/images/user-04.png" alt="">
-      </cell>
-      <cell title="项目5" is-link>
-        <img slot="icon" class="user-icon" src="../assets/images/user-05.png" alt="">
       </cell>
     </group>
   </div>
 </template>
 
 <script>
-  import {Cell, Group} from 'vux'
+  import {Cell, Group,Card } from 'vux'
 
   export default {
     name: "user",
     components: {
       Cell,
-      Group
+      Group,
+      Card
     }
   }
 </script>
 
 <style scoped lang="less">
   @import "../assets/styles/mixin";
-
+  @import '~vux/src/styles/1px.less';
+  .weui-panel {
+    background-color: #eeeeee;
+    margin-top: 0;
+  }
+  .card-flex {
+    display: flex;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  .card-flex > div {
+    flex: 1;
+    text-align: center;
+  }
+  .card-flex {
+    padding: 10px 0;
+  }
+  .card-padding {
+    padding: 15px;
+  }
+  .top{
+    min-height: 200/@rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeeeee;
+    .cell{
+      flex: 1;
+      text-align: center;
+      span{
+        color: #ff4f3b;
+      }
+      p{
+        font-weight: 600;
+      }
+      .outer{
+        background-color: #38aca9;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .inner{
+        background-color: #55c2b6;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        line-height: 50px;
+        color: #fafafa;
+      }
+    }
+  }
   .user-page {
     font-size: 14px;
     height: 100%;
