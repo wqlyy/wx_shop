@@ -40,7 +40,7 @@
       <cell title="我兑换的礼品" is-link link="/order">
         <img slot="icon" class="user-icon" src="../assets/images/user-01.png" alt="">
       </cell>
-      <cell title="积分兑换礼品" is-link>
+      <cell title="积分兑换礼品" is-link link="/home">
         <img slot="icon" class="user-icon" src="../assets/images/user-02.png" alt="">
       </cell>
       <cell title="查看积分明细记录" is-link>

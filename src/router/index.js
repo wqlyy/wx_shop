@@ -7,6 +7,7 @@ import User from '@/pages/User'
 import Detail from '@/pages/Detail'
 import Search from '@/pages/Search'
 import Order from '@/pages/Order'
+import submitOrder from '@/pages/submit'
 
 Vue.use(Router)
 
@@ -52,6 +53,14 @@ export default new Router({
       path: '/order',
       name: 'Order',
       component: Order,
+      meta: {
+        show: true
+      }
+    },
+    {
+      path: '/submitOrder',
+      name: 'submitOrder',
+      component: submitOrder,
       meta: {
         show: true
       }

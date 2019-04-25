@@ -21,35 +21,31 @@
         <Group class="intro">
           <h6 slot="title" class="title">商品介绍</h6>
           <div class="content" v-html="">
-            <h4>商品ID:{{$route.params.id}}</h4>
-            最后内容根据CRM系统生成
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            A asperiores aut autem blanditiis culpa ea ex ipsa iste,
-            iure natus, officiis, perspiciatis quas quo recusandae reiciendis sint
-            sit velit veritatis.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            A asperiores aut autem blanditiis culpa ea ex ipsa iste,
-            iure natus, officiis, perspiciatis quas quo recusandae reiciendis sint
-            sit velit veritatis.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            A asperiores aut autem blanditiis culpa ea ex ipsa iste,
-            iure natus, officiis, perspiciatis quas quo recusandae reiciendis sint
-            sit velit veritatis.
+            <h4>商品ID:{{$route.params.id}},根据接口获取数据</h4>
+            <p> 图文并茂的介绍图文并茂的介绍图文并茂的介绍图文并茂的介绍图文并茂的介绍
+             图文并茂的介绍图文并茂的介绍图文并茂的介绍图文并茂的介绍图文并茂的介绍</p>
+            <img src="https://img20.360buyimg.com/mcoss/jfs/t23728/50/902830340/59547/7b3dbfab/5b485727N6f602b78.png" alt="">
+            <p>图文并茂的介绍图文并茂的介绍图文并茂的介绍图文并茂的介绍</p>
+            <img src="https://img13.360buyimg.com/mcoss/jfs/t23251/236/1113140151/60832/6627cd22/5b517406N965d0b4a.jpg" alt="">
+            <p>商品详细商品详细信息商品详细信息商品详细信息商品详细信息商品详细信息商品详细信息商品详细信息信息</p>
+            <img src="https://m.360buyimg.com/babel/jfs/t23728/308/335035953/255128/561d4039/5b2c7e4aNbe42bec4.jpg" alt="">
+            <p>图文并茂的介绍图文并茂的介绍图文并茂的介绍图文并茂的介绍</p>
           </div>
         </Group>
         <Divider>到底咯~~</Divider>
       </div>
       <div class="detail-footer" slot="bottom">
-        <div class="left">
-          <div class="store">
-            <i class="icon collection">&#xe628;</i>
-            <p>收藏</p>
-          </div>
-        </div>
-        <div class="right">
-          <button class="add-cart" @click="addCartList">加入购物车</button>
-          <button class="buy-now">立即兑换</button>
-        </div>
+        <button class="buy-now" @click="addCartList($route.params.id)">立即兑换</button>
+        <!--<div class="left" v-show="false">-->
+          <!--<div class="store">-->
+            <!--<i class="icon collection">&#xe628;</i>-->
+            <!--<p>收藏</p>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="right">-->
+          <!--<button class="add-cart">加入购物车</button>-->
+          <!--<button class="buy-now" @click="addCartList($route.params.id)">立即兑换</button>-->
+        <!--</div>-->
       </div>
     </view-box>
   </div>
@@ -88,8 +84,9 @@
       console.log('选择的产品id:', this.$route.params.id)
     },
     methods:{
-      addCartList(){
-        this.$router.push({name:'Cart',params:{}})
+      addCartList(id){
+        console.log(id);
+        this.$router.push({name:'Cart',params:{id:id}})
       }
     }
   }
@@ -97,7 +94,19 @@
 
 <style scoped lang="less">
   @import "../assets/styles/mixin";
-
+  button{
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 50px;
+    font-size: 16px;
+    color:#ebebeb;
+  }
+  .buy-now{
+    background: #e4393c;
+    width: 100%;
+    float: right;
+  }
   .detail-page {
     height: 100%;
     font-size: 0;
@@ -131,12 +140,18 @@
         background-color: #fff;
         .title {
           font-size: 16px;
-          font-weight: normal;
+          font-weight: bold;
           color: #333;
         }
         .content {
           padding: 10px 0;
           color: #666;
+          p{
+            font-size: 14px;
+          }
+          img{
+            width: 100%;
+          }
         }
       }
     }

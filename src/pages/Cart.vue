@@ -20,10 +20,10 @@
                   <p class="selled">已有{{item.people}}人兑换成功</p>
                 </div>
                 <div v-if="item.isBuy" class="btn nopass">
-                  <span>已兑</span>
+                  <span class="check-order" @click="checkOrder">查看订单</span>
                 </div>
                 <div v-else class="btn" @click="accountPage">
-                  <span>兑换</span>
+                  <span>立即兑换</span>
                 </div>
               </div>
             </div>
@@ -83,6 +83,9 @@
     },
     methods:{
       accountPage(){
+        this.$router.push({ name: 'submitOrder'})
+      },
+      checkOrder(){
         this.$router.push({ name: 'Order'})
       }
     }
@@ -91,6 +94,7 @@
 
 <style scoped lang="less">
   @import "../assets/styles/mixin";
+
 .cart-page{
   height: 100%;
   .container{
@@ -148,7 +152,7 @@
             .intro{
               position: absolute;
               left: 0;
-              width: 75%;
+              width: 70%;
               .title{
                 color: #666;
                 line-height: 1.3;
@@ -166,6 +170,7 @@
             }
             .btn{
               position: absolute;
+              font-size: 12/@rem;
               right: 0;
               top:0;
               transform: translateY(50%);
@@ -176,6 +181,9 @@
               border-radius: 3px;
               &.nopass{
                 background-color: #b8b8b8;
+                .check-order{
+                  font-size: 12/@rem;
+                }
               }
             }
           }

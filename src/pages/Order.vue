@@ -12,9 +12,7 @@
                 <div class="intro">
                   <p class="nowrap-multi title">{{item.title}}</p>
                 </div>
-                <div class="btn nopass">
-                  <span>已完成</span>
-                </div>
+                <div class="buy_time">2019-04-25 13:40:03 <span>已完成</span></div>
               </div>
             </div>
           </flexbox-item>
@@ -120,6 +118,7 @@
             box-sizing: border-box;
             padding: 10/@rem 20/@rem;
             overflow: hidden;
+            position: relative;
             .left{
               float: left;
               width: 220/@rem;
@@ -134,11 +133,24 @@
             .right{
               float: right;
               width: 470/@rem;
+              height: 160/@rem;
               position: relative;
+              .buy_time{
+                position: absolute;
+                width: 95%;
+                left: 0;
+                bottom: 8px;
+                font-size: 12/@rem;
+                color: #777;
+                span{
+                  color: #e4393c;
+                  float: right;
+                }
+              }
               .intro{
                 position: absolute;
                 left: 0;
-                width: 70%;
+                width: 95%;
                 .title{
                   color: #666;
                   line-height: 1.3;
@@ -164,6 +176,7 @@
                 color: #fff;
                 padding: 3px 10px;
                 border-radius: 3px;
+                font-size: 16/@rem;
                 &.nopass{
                   background-color: #b8b8b8;
                 }
